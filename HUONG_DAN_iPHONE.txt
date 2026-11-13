@@ -1,0 +1,25 @@
+301 CHINESE STUDIO V17 — HƯỚNG DẪN ĐƯA LÊN iPHONE
+
+Bộ tệp này có chế độ cài web app lên màn hình chính iPhone và lưu HTML vào bộ nhớ đệm để học khi mất mạng sau lần mở đầu tiên. Không cần database hoặc máy chủ riêng.
+
+CÁCH CÀI WEB APP CHẠY ĐỘC LẬP:
+1. Tạo một repository GitHub, ví dụ: 301-chinese-studio (lưu ý: GitHub Pages có thể công khai toàn bộ nội dung website; không tải dữ liệu nhạy cảm lên).
+2. Giải nén ZIP này và tải CÁC FILE TRONG THƯ MỤC lên thư mục gốc repository (phải có index.html, manifest.webmanifest, sw.js, icon...). Không tải riêng file ZIP rồi mong GitHub Pages chạy được.
+3. Vào Settings > Pages > Build and deployment > Deploy from a branch > main / (root) > Save.
+4. Chờ GitHub Pages công bố URL trên màn hình Pages. Thông thường URL có dạng https://<username>.github.io/<repo>/.
+5. Trên iPhone, mở URL bằng Safari khi có internet. Để trang tải xong.
+6. Nút Chia sẻ (Share) > Add to Home Screen (Thêm vào Màn hình chính) > Add. Mở biểu tượng 301 Chinese vừa tạo, lần đầu vẫn cần có mạng để cache hoàn tất.
+7. Thử bật chế độ máy bay và mở lại từ biểu tượng màn hình chính để xác nhận bản đã được lưu offline.
+
+LƯU Ý:
+- Bộ PWA giúp học offline sau khi cache hoàn tất nhưng iOS có thể dọn cache khi thiếu dung lượng. Không cam kết offline vĩnh viễn.
+- Phát âm tiếng Trung dùng giọng đọc sẵn có trên iPhone; độ khả dụng/khả năng đọc offline phụ thuộc giọng nói đã được cài và hỗ trợ Safari/iOS.
+- Tiến độ học lưu theo trình duyệt/chế độ ứng dụng, không tự đồng bộ giữa laptop và iPhone. Bấm Sao lưu (JSON) trên máy cũ và Khôi phục trên máy mới; việc lưu bằng link https khác với mở file HTML trực tiếp.
+- Không dùng Safari ở chế độ Riêng tư để lưu tiến độ dài hạn.
+- Bộ này KHÔNG cần cài npm, Node.js hoặc database trên server.
+
+MỞ TRÊN WIFI NỘI BỘ (KHÔNG CẦN GITHUB):
+- Chạy Python trong thư mục chứa tệp HTML trên laptop: python -m http.server 8000 --bind 0.0.0.0
+- Tìm IPv4 của laptop (Windows: ipconfig), cho phép mạng private qua firewall (nếu được hỏi).
+- iPhone + laptop cùng mạng Wifi, Safari: http://<IPv4-của-laptop>:8000/301_Chinese_Studio_V17_Responsive_iPhone.html
+- Laptop phải đang bật và server phải đang chạy. Đường dẫn nội bộ này không phải HTTPS nên không dùng để cài PWA offline; chỉ phù hợp học trực tiếp trong cùng mạng.
